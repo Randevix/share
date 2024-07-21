@@ -1,0 +1,12 @@
+{ "debug": true,
+  "whatsapp": {
+    "authPath": "../Data/Auth/",
+    "storeFile": "../Data/store.json",
+    "profilPictureFolder": "../Media/ProfilePhotos",
+    "reconnectTimeout": "1500"
+  },
+  "websocket": {
+    "serverUrl": "http://localhost:90",
+    "hubName": "simpatiHub"
+  }
+}

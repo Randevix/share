@@ -1,0 +1,27 @@
+{
+  "name": "wapp",
+  "version": "0.0.0",
+  "description": "Wapp",
+  "main": "app.js",
+  "author": "",
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "nodemon": "^3.1.4"
+  },
+  "eslintConfig": {},
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "libphonenumber-js": "^1.11.4",
+    "pino": "^9.3.1",
+    "qrcode-terminal": "^0.12.0",
+    "signalr-client": "^0.0.20"
+  }
+}
