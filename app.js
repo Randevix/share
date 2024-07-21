@@ -22,26 +22,22 @@ soket.client.on(soket.hubNames[0], 'clientsStatus', (message) => {
     console.log('clientsStatus:', message);
 });
 
-
 soket.client.serviceHandlers.connected = async (connection) => {
     soket.eventTrigger('connected', null, connection);
 
 
 };
 
-
 soket.client.serviceHandlers.messageReceived = (message) => {
     soket.messageReceived(message);
     return false;
 };
-
 
 soket.start().then(() => {
     console.log("SignalR client started.");
 }).catch(error => {
     console.error("Socket connection failed:", error);
 });
-
 
 soket.messageReceived = (message) => {
     if (message.utf8Data === "{}") return;
