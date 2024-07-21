@@ -36,8 +36,6 @@ soket.client.serviceHandlers.messageReceived = (message) => {
 };
 
 
-
-
 soket.start().then(() => {
     console.log("SignalR client started.");
 }).catch(error => {
