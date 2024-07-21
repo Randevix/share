@@ -3,6 +3,7 @@ const replserver = require('./utils/replserver');
 const whatsappService = require('./whatsapp/whatsappSocket');
 const SignalRClient = require('./soket/signalRClient');
 const config = require('./config'); // Yapýlandýrma dosyasýný içe aktar
+
 global.w = new Object();
 replserver.start()
 whatsappService.start();
@@ -24,7 +25,7 @@ soket.client.on(soket.hubNames[0], 'clientsStatus', (message) => {
 
 soket.client.serviceHandlers.connected = async (connection) => {
     soket.eventTrigger('connected', null, connection);
-     // connected olayýndan sonra diðer dinleyicileri tanýmlayýn
+    
  
 };
 
@@ -43,16 +44,16 @@ soket.start().then(() => {
     console.error("Socket connection failed:", error);
 });
 
-// messageReceived ve incomingCommands metodlarýný soket nesnesinde tanýmlayýn
+
 soket.messageReceived = (message) => {
     if (message.utf8Data === "{}") return;
      console.log("Message received: ", message);
-    // Mesaj iþleme kodu buraya
+    
 };
 
 soket.incomingCommands = async (command) => {
     console.log("Incoming command: ", command);
-    // Komut iþleme kodu buraya
+   
 };
 
 
@@ -60,15 +61,6 @@ soket.incomingCommands = async (command) => {
 
 
 
-
-
-
-//soket.start().then(() => {
-
-//    soket.client.servicehandler.messageReceived = (message) => {
-//       console.log(message);
-//       return false;
-//    }
 
 
 
