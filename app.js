@@ -19,14 +19,14 @@ const soket = new SignalRClient({
 
 
 soket.client.on(soket.hubNames[0], 'clientsStatus', (message) => {
-     console.log('clientsStatus:', message);
+    console.log('clientsStatus:', message);
 });
 
 
 soket.client.serviceHandlers.connected = async (connection) => {
     soket.eventTrigger('connected', null, connection);
-    
- 
+
+
 };
 
 
@@ -47,13 +47,13 @@ soket.start().then(() => {
 
 soket.messageReceived = (message) => {
     if (message.utf8Data === "{}") return;
-     console.log("Message received: ", message);
-    
+    console.log("Message received: ", message);
+
 };
 
 soket.incomingCommands = async (command) => {
     console.log("Incoming command: ", command);
-   
+
 };
 
 
