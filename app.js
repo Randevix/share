@@ -22,8 +22,6 @@ soket.client.on(soket.hubNames[0], 'clientsStatus', (message) => {
 });
 
 
-
-
 soket.client.serviceHandlers.connected = async (connection) => {
     soket.eventTrigger('connected', null, connection);
      // connected olayýndan sonra diðer dinleyicileri tanýmlayýn
