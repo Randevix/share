@@ -8,6 +8,8 @@ global.w = new Object();
 replserver.start()
 whatsappService.start();
 
+
+
 soket.start().then(() => {
     console.log("SignalR client started.");
 }).catch(error => {
