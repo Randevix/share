@@ -29,7 +29,6 @@ soket.client.serviceHandlers.messageReceived = (message) => {
 };
 
 
-
 soket.messageReceived = (message) => {
     if (message.utf8Data === "{}") return;
     console.log("Message received: ", message);
