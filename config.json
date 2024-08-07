@@ -4,7 +4,7 @@
     "storeFile": "../Data/store.json",
     "profilPictureFolder": "../Media/ProfilePhotos",
     "reconnectTimeout": "1500",
-    "connectWhatsappOnStart": false
+    "connectWhatsappOnStart": "true"
   },
   "websocket": {
     "serverUrl": "http://localhost:90",

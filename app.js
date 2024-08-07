@@ -6,8 +6,8 @@ const config = require('./config'); // Yapýlandýrma dosyasýný içe aktar
 
 global.w = new Object();
 replserver.start()
-if (config.connectWhatsappOnStart) whatsappService.start();
-
+//cif (config.connectWhatsappOnStart) 
+    whatsappService.start();
 
 
 soket.start().then(() => {

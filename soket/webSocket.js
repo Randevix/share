@@ -20,17 +20,21 @@ const soket = new SignalRClient({
     }
 });
 ;
-
-
-soket.client.on(soket.hubNames[0], 'clientsStatus', (message,id) => {
-    console.log('clientsStatus:', message,id);
-});
-
 soket.client.serviceHandlers.connected = async (connection) => {
     soket.eventTrigger('connected', null, connection);
 
 
 };
+
+soket.client.on(soket.hubNames[0], 'clientsStatus', (message,id,connectedClients) => {
+    console.log('clientsStatus:', message, id,connectedClients);
+});
+
+soket.client.on(soket.hubNames[0], 'processCommand', (request) => {
+    console.log('clientsStatus:', request);
+});
+
+
 
 soket.client.serviceHandlers.messageReceived = (message) => {
     //soket.messageReceived(message);
@@ -44,7 +48,7 @@ soket.messageReceived = (message) => {
 
 };
 
-soket.incomingCommands = async (command) => {
+soket.processCommands = async (command) => {
     console.log("Incoming command: ", command);
 
 };
